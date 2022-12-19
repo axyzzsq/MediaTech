@@ -2,6 +2,13 @@
 
 ## 1、FFmpeg源码安装
 
+- 源码备份:
+
+  ```shell
+  链接：https://pan.baidu.com/s/1sJwIFvISXeQYdLwL5nUU1A 
+  提取码：ma38 
+  ```
+
 - Step1:创建目录
 
   ```shell
@@ -76,6 +83,8 @@
   ```
 
   ![image-20221219193147119](https://pic-1304959529.cos.ap-guangzhou.myqcloud.com/DB/image-20221219193147119.png)
+
+  ![image-20221219202709631](https://pic-1304959529.cos.ap-guangzhou.myqcloud.com/DB/image-20221219202709631.png)
 
   **注：如果报错找不到x264或x265，ubunut下多半是因为没有安装pkg-config。安装命令为：apt install pkg-config**
 
