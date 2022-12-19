@@ -89,3 +89,14 @@
   **注：如果报错找不到x264或x265，ubunut下多半是因为没有安装pkg-config。安装命令为：apt install pkg-config**
 
   
+
+- 添加ffmepg到环境变量
+
+```shell
+export FFmpeg_PATH=/usr/ffmpeg4.1/ffmpeg
+export PATH=$FFmpeg_PATH/bin:$PATH 
+# 需要提供路径， 让ffmpeg ffprobe等命令找到需要的依赖
+export LD_LIBRARY_PATH=$FFmpeg_PATH/lib:$LD_LIBRARY_PATH 
+source ~/.bashrc
+```
+
