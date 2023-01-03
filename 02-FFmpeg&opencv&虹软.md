@@ -32,3 +32,14 @@
 - [cv::mat的使用](https://blog.csdn.net/czsnooker/article/details/118345494)
 - [imread函数的使用](https://blog.csdn.net/aijie099/article/details/104392143)
 - [resize的使用](https://yangyongli.blog.csdn.net/article/details/121449412?spm=1001.2101.3001.6650.4&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-4-121449412-blog-114271178.pc_relevant_multi_platform_whitelistv1_exp2&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-4-121449412-blog-114271178.pc_relevant_multi_platform_whitelistv1_exp2&utm_relevant_index=6)
+
+
+
+## 第2节 read_camera_thread
+
+![image-20230103201221515](https://pic-1304959529.cos.ap-guangzhou.myqcloud.com/DB/image-20230103201221515.png)
+
+[参考文献]
+
+- [FFmpeg通过摄像头实现对视频流进行解码并显示测试代码(新接口)](https://blog.csdn.net/fengbingchun/article/details/93975844)
+- [雷霄骅-最简单的基于FFmpeg的AVDevice例子（读取摄像头)](https://blog.csdn.net/leixiaohua1020/article/details/39702113?spm=1001.2101.3001.6650.4&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-4-39702113-blog-89822927.pc_relevant_multi_platform_whitelistv1_exp2&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-4-39702113-blog-89822927.pc_relevant_multi_platform_whitelistv1_exp2&utm_relevant_index=9)
