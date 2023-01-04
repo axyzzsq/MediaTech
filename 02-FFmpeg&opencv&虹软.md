@@ -37,7 +37,7 @@
 
 ## 第2节 read_camera_thread
 
-![image-20230104111703349](https://pic-1304959529.cos.ap-guangzhou.myqcloud.com/DB/image-20230104111703349.png)
+![image-20230104211103453](https://pic-1304959529.cos.ap-guangzhou.myqcloud.com/DB/image-20230104211103453.png)
 
 [参考文献]
 
