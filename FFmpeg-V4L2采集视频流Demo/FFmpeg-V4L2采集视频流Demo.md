@@ -15,7 +15,7 @@
 
 ## 实现
 
-[github源码地址](https://github1s.com/axyzzsq/Audio-Video-Tech/blob/main/SourceCode/FFmpegV4L2-Video-Stream.c)
+[github源码地址](https://github1s.com/axyzzsq/Audio-Video-Tech/blob/main/FFmpeg-V4L2%E9%87%87%E9%9B%86%E8%A7%86%E9%A2%91%E6%B5%81Demo/FFmpegV4L2-Video-Stream.c)
 
 ```c
 #include <stdio.h>
