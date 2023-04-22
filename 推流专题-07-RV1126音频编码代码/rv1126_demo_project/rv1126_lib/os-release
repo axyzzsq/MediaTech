@@ -1,0 +1,5 @@
+NAME=Buildroot
+VERSION=2018.02-rc3-02947-gb62761c
+ID=buildroot
+VERSION_ID=2018.02-rc3
+PRETTY_NAME="Buildroot 2018.02-rc3"
