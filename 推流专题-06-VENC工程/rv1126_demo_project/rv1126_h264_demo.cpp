@@ -48,9 +48,9 @@ int main()
     vi_chn_attr.u32Width = u32Width;
     vi_chn_attr.u32Height = u32Height;
     vi_chn_attr.enPixFmt = IMAGE_TYPE_NV12;
-    vi_chn_attr.enBufType = VI_CHN_BUF_TYPE_MMAP;
-    vi_chn_attr.enWorkMode = VI_WORK_MODE_NORMAL;
-    ret = RK_MPI_VI_SetChnAttr(s32CamId, 1, &vi_chn_attr);
+    vi_chn_attr.enBufType = VI_CHN_BUF_TYPE_MMAP;  //VI通道的缓冲区类型为内存映射方式.在内存映射方式下，VI通道的缓冲区将被映射到用户空间的一块内存中，用户可以直接访问该内存，以读取或写入VI通道的数据。
+    vi_chn_attr.enWorkMode = VI_WORK_MODE_NORMAL;  
+    ret = RK_MPI_VI_SetChnAttr(s32CamId, 1, &vi_chn_attr); 
     ret |= RK_MPI_VI_EnableChn(s32CamId, 1);
     if (ret)
     {
@@ -61,20 +61,23 @@ int main()
     VENC_CHN_ATTR_S venc_chn_attr;
     memset(&venc_chn_attr, 0, sizeof(venc_chn_attr));
     venc_chn_attr.stVencAttr.enType = RK_CODEC_TYPE_H264;
-    venc_chn_attr.stRcAttr.enRcMode = VENC_RC_MODE_H264CBR;
-    venc_chn_attr.stRcAttr.stH264Cbr.u32Gop = 30;
+    venc_chn_attr.stRcAttr.enRcMode = VENC_RC_MODE_H264CBR; //H.264编码器的码率控制模式为恒定码率(CBR)模式。在恒定码率模式下，编码器将尝试以恒定的比特率对视频帧进行编码，以便在网络传输和存储方面具有一致的性能。
+    venc_chn_attr.stRcAttr.stH264Cbr.u32Gop = 30; 
     venc_chn_attr.stRcAttr.stH264Cbr.u32BitRate = u32Width * u32Height;
     // frame rate: in 30/1, out 30/1.
+    //源帧率
     venc_chn_attr.stRcAttr.stH264Cbr.fr32DstFrameRateDen = 1;
-    venc_chn_attr.stRcAttr.stH264Cbr.fr32DstFrameRateNum = 30;
+    venc_chn_attr.stRcAttr.stH264Cbr.fr32DstFrameRateNum = 30; //分子为30，分母为1，表示输出帧率为30帧/秒。
+    //目标帧率
     venc_chn_attr.stRcAttr.stH264Cbr.u32SrcFrameRateDen = 1;
     venc_chn_attr.stRcAttr.stH264Cbr.u32SrcFrameRateNum = 30;
+
     venc_chn_attr.stVencAttr.imageType = IMAGE_TYPE_NV12;
     venc_chn_attr.stVencAttr.u32PicWidth = u32Width;
     venc_chn_attr.stVencAttr.u32PicHeight = u32Height;
     venc_chn_attr.stVencAttr.u32VirWidth = u32Width;
     venc_chn_attr.stVencAttr.u32VirHeight = u32Height;
-    venc_chn_attr.stVencAttr.u32Profile = 77;
+    venc_chn_attr.stVencAttr.u32Profile = 77; //H.264编码器的编码配置参数为77，表示Main Profile。双向预测和高级压缩编码
     ret = RK_MPI_VENC_CreateChn(0, &venc_chn_attr);
     if (ret)
     {
