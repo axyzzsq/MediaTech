@@ -8,7 +8,7 @@ void *get_audio_aenc_thread(void *args)
 
     while (1)
     {
-        mb = RK_MPI_SYS_GetMediaBuffer(RK_ID_AENC, 0, -1);
+        mb = RK_MPI_SYS_GetMediaBuffer(RK_ID_AENC, 0, -1);  // 从AENCRK_ID_AENC模块的通道0中获取数据，-1表示阻塞等待
         if (!mb)
         {
             printf("RK_MPI_SYS_GetMediaBuffer get null buffer!\n");
@@ -21,7 +21,7 @@ void *get_audio_aenc_thread(void *args)
                RK_MPI_MB_GetModeID(mb), RK_MPI_MB_GetChannelID(mb),
                RK_MPI_MB_GetTimestamp(mb));
 
-        fwrite(RK_MPI_MB_GetPtr(mb), 1, RK_MPI_MB_GetSize(mb), audio_file);
+        fwrite(RK_MPI_MB_GetPtr(mb), 1, RK_MPI_MB_GetSize(mb), audio_file); // 将数编码后的数据写入文件
     }
 
     return NULL;
@@ -34,7 +34,7 @@ int main()
     RK_U32 u32SampleRate = 16000;
     RK_U32 u32BitRate = 64000; // 64kbps
     RK_U32 u32ChnCnt = 2;
-    RK_U32 u32FrameCnt = 1024; // always 1024 for mp3 aac
+    RK_U32 u32FrameCnt = 1024; // always 1024 for mp3 and aac
     SAMPLE_FORMAT_E enSampleFmt = RK_SAMPLE_FMT_FLTP;
     // default:CARD=rockchiprk809co
     RK_CHAR *pDeviceName = "default";
